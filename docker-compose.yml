@@ -1,0 +1,19 @@
+services:
+  db:
+    container_name: db_mysql_laravel_api
+    restart: always
+    image: mysql:5.7
+    tty: true
+    environment:
+      MYSQL_DATABASE: api-php
+      MYSQL_USER: usr_api
+      MYSQL_PASSWORD: userTest
+      MYSQL_ROOT_PASSWORD: Toor123456789*
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+    db:
